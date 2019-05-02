@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.ChkAcmMapper" >
+    <!--由于application.properties配置文件中，声明了实体类在哪个包下
+	所以直接写User就行。
+	如果不声明：必须写全 com.example.ssmspringboot.domain.User
+	-->
+    <select id="findchkacmdata"  resultType="String">
+    <!--<select id="findByUsername"  resultType="com.example.demo.entity.User">-->
+        select CONCAT(jrn_no,'#',tx_typ,'#',rvs_flg,'|',tx_amt)from t_adt_chkacm
+    </select>
+</mapper>
